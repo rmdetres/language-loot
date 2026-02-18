@@ -210,53 +210,7 @@ const Index = () => {
             </div>
           </section>
 
-          {/* ===== STUDY ===== */}
-          <section>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-lg">⚡</span>
-              <h2 className="font-display text-2xl text-gradient-gold">Study Now — Earn Coins</h2>
-            </div>
 
-            {/* Language selector pills */}
-            <div className="flex gap-2 mb-3 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
-              {[
-                { flag: "🇯🇵", lang: "Japanese", active: true },
-                { flag: "🇫🇷", lang: "French", active: false },
-                { flag: "🇩🇪", lang: "German", active: false },
-                { flag: "🇪🇸", lang: "Spanish", active: false },
-                { flag: "🇰🇷", lang: "Korean", active: false },
-              ].map((l) => (
-                <button
-                  key={l.lang}
-                  className={`
-                    flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold
-                    transition-all border
-                    ${l.active
-                      ? "bg-primary/15 border-primary/40 text-primary shadow-glow-gold"
-                      : "border-border text-muted-foreground hover:border-primary/30 hover:text-foreground"
-                    }
-                  `}
-                >
-                  <span>{l.flag}</span>
-                  {l.lang}
-                </button>
-              ))}
-            </div>
-
-            <WordStudyCard
-              word="食べる"
-              translation="to eat (taberu)"
-              language="Japanese"
-              flag="🇯🇵"
-              coinsPerWord={5}
-              streak={12}
-            />
-
-            {/* BLUE CTA — trust/action psychology */}
-            <button className="mt-3 w-full py-4 rounded-2xl bg-gradient-blue text-white font-black text-base uppercase tracking-wider shadow-glow-blue hover:opacity-90 transition-opacity">
-              🚀 Start Full Study Session
-            </button>
-          </section>
 
           {/* ===== PROGRESS ===== */}
           <section>
