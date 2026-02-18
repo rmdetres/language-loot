@@ -99,10 +99,10 @@ const Index = () => {
         <section className="relative overflow-hidden">
           {/* Hero BG */}
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-15"
+            className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
             style={{ backgroundImage: `url(${heroBanner})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/85 to-background" />
 
           {/* Floating particles */}
           {["🪙", "✨", "🎯", "🏆", "💫"].map((emoji, i) => (

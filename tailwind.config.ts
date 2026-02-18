@@ -99,7 +99,7 @@ export default {
         "glow-orange": "var(--glow-orange)",
         "glow-cyan": "var(--glow-cyan)",
         "glow-card": "var(--glow-card)",
-        "coin": "0 4px 20px hsl(43 96% 56% / 0.5), inset 0 1px 0 hsl(43 100% 80% / 0.3)",
+        "coin": "0 2px 10px hsl(38 85% 42% / 0.35), inset 0 1px 0 hsl(43 100% 80% / 0.4), 0 0 0 1px hsl(38 85% 42% / 0.15)",
       },
       keyframes: {
         "accordion-down": {
