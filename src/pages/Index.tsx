@@ -132,8 +132,8 @@ const Index = () => {
                 <span className="text-gradient-gold text-glow-gold">WIN.</span>
               </h1>
               <p className="text-muted-foreground text-sm">
-                Study words → earn{" "}
-                <span className="text-primary font-bold">coins</span> → get raffle tickets →{" "}
+              Study words → earn{" "}
+                <span className="text-primary font-bold">coins</span> →{" "}
                 <span className="text-secondary font-bold">win prizes!</span> 🔥
               </p>
             </div>
@@ -159,7 +159,7 @@ const Index = () => {
             >
               {[
                 { label: "Words Learned", value: "243", icon: "📖", color: "text-trust-blue" },
-                { label: "Your Tickets", value: "12", icon: "🎟️", color: "text-gradient-gold" },
+                { label: "Your Coins", value: "1,240", icon: "🪙", color: "text-gradient-gold" },
                 { label: "Day Streak", value: "12🔥", icon: "🔥", color: "text-progress-green" },
               ].map((stat) => (
                 <div key={stat.label} className="card-glass rounded-xl p-3 text-center">
@@ -202,7 +202,7 @@ const Index = () => {
             <div className="mt-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 flex items-center gap-2.5">
               <span className="text-base">🪙</span>
               <p className="text-xs text-muted-foreground">
-                Every <span className="text-primary font-bold">10 coins</span> = 1 raffle ticket. Study more, win more!
+                Earn <span className="text-primary font-bold">coins</span> by studying — more coins = better prize odds!
               </p>
             </div>
           </section>
@@ -304,7 +304,7 @@ const Index = () => {
                   step: "02",
                   icon: "🪙",
                   title: "Earn Coins",
-                  desc: "10 coins = 1 raffle ticket. Keep your streak alive to earn faster.",
+                  desc: "More coins = better prize odds. Keep your streak alive to earn faster.",
                   color: "border-primary/25 bg-primary/5",          // GOLD = reward, dopamine
                   accent: "text-primary",
                 },

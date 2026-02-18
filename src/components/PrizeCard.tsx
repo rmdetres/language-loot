@@ -12,6 +12,7 @@ interface PrizeCardProps {
   delay?: number;
 }
 
+
 const TIER_CONFIG = {
   lucky: {
     label: "🎯 Lucky Draw",
@@ -118,7 +119,7 @@ export const PrizeCard = ({
         <div className="space-y-1.5">
           <div className="flex justify-between items-center text-xs">
             <span className="text-muted-foreground">
-              {userTickets}/{ticketsRequired} tickets
+              {userTickets}/{ticketsRequired} 🪙 coins
             </span>
             {canEnter && (
               <span className="text-neon-green font-bold text-[10px] uppercase tracking-wider">
@@ -149,7 +150,7 @@ export const PrizeCard = ({
             }
           `}
         >
-          {canEnter ? "🎟️ You're In!" : `Need ${ticketsRequired - userTickets} more`}
+          {canEnter ? "🪙 You're In!" : `Need ${ticketsRequired - userTickets} more 🪙`}
         </button>
       </div>
     </div>
