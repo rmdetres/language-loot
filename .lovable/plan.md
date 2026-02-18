@@ -1,33 +1,28 @@
 
-## Improve DailyGoals Component
+## Slim Down the Daily Goals Cards
 
-### Issues to fix
+### What's clunky
 
-**1. Empty progress bar is invisible**
-At 0% progress the bar renders at 0px width with no visual cue. Fix: give the track a more visible background (`bg-muted/60`) and add a subtle striped or dashed "empty" style.
+1. **Oversized CTA button** — Full-width `py-2.5` button with uppercase bold text is too dominant for a compact goal card. It's as tall as a primary action button on a form.
+2. **Too much vertical space** — `py-3` padding on both the header row and the button section makes each card unnecessarily tall. Two cards stack to a large block.
+3. **Bottom padding gap** — There's visible empty space between the progress bar and the button due to `py-3` padding around each section.
+4. **The radio circle + label row feels wide/sparse** — The check circle and label are left-aligned but the coin badge pushes the layout taller than needed.
 
-**2. Awkward layout hierarchy**
-The coins note floats between the progress bar and button, which is visually disconnected. Move the coins note to sit right below the task label (inline with the header row), and collapse it into a badge-style chip.
+### The fix
 
-**3. Button label is too generic**
-Both buttons say "Earn Coins" with no goal context. Improve to use goal-specific labels: "Start Review" and "Start Lesson".
+Tighten the card layout in `src/components/DailyGoals.tsx`:
 
-**4. No completed state**
-When `current >= total`, the goal should show a ✅ checkmark, green border, strikethrough label, and hide the CTA button (replaced by a "Completed!" badge).
+- **Header row**: reduce vertical padding from `py-3` to `py-2.5`
+- **Progress bar wrapper**: reduce horizontal margin from `mx-4` to `mx-4` (keep) but reduce the gap around it by removing the bottom section's top padding
+- **CTA button**: reduce from `py-2.5` to `py-1.5`, reduce font size from `text-sm` to `text-xs`, make it feel like a compact action chip rather than a full form button
+- **CTA section padding**: reduce from `py-3` to `py-2`
+- **Completed badge**: similarly reduce padding to `py-1.5`
+- **Coin badge**: reduce `mt-1` spacing, make it slightly more compact (`py-0.5` stays but `px-1.5` instead of `px-2`)
+- **Progress bar**: add `mb-0` / reduce gap between bar and button section
 
-**5. Progress counter readability**
-Make the `0/10` counter slightly larger and use the primary color when in progress, gold when complete.
+### Result
 
-### What will change
-
-**`src/components/DailyGoals.tsx`** — full redesign of the goal card layout:
-
-- Move coins note into the header row as a small pill badge (e.g. `🪙 +3 coins/answer`)
-- Thicken the progress bar from `h-1` to `h-2` and give the track a more visible background
-- Show a subtle min-width glow dot on the track to indicate position even at 0%
-- Add a completed state: green border, ✅ circle, "Completed!" badge, hide CTA
-- Change button labels to goal-specific: "Start Review" / "Start Lesson"
-- Make the `current/total` counter use `text-primary` when in-progress and `text-progress-green` when done
+Each card shrinks by roughly 20–25px in height. The two-card stack will feel like a compact info widget rather than a prominent action section, which is appropriate since these are daily reminders, not the main CTA of the page.
 
 ### Files to change
-- `src/components/DailyGoals.tsx`
+- `src/components/DailyGoals.tsx` — padding/sizing tweaks only, no structural changes
