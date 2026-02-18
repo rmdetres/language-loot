@@ -155,25 +155,6 @@ const Index = () => {
               <CountdownTimer />
             </div>
 
-            {/* Stats row */}
-            <div
-              className="mt-6 grid grid-cols-3 gap-2.5 animate-slide-up-fade delay-300"
-              style={{ animationFillMode: "both", opacity: 0 }}
-            >
-              {[
-                { label: "Words Learned", value: "243", icon: "📖", color: "text-trust-blue" },
-                { label: "Your Coins", value: "1,240", icon: "🪙", color: "text-gradient-gold" },
-                { label: "Day Streak", value: "12🔥", icon: "🔥", color: "text-progress-green" },
-              ].map((stat) => (
-                <div key={stat.label} className="card-glass rounded-xl p-3 text-center">
-                  <p className="text-base">{stat.icon}</p>
-                  <p className={`font-display text-2xl mt-0.5 ${stat.color}`}>{stat.value}</p>
-                  <p className="text-muted-foreground text-[10px] font-semibold uppercase tracking-wider">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
