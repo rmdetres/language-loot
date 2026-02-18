@@ -1,19 +1,33 @@
 
-## Remove Redundant Stats Row from Hero Section
+## Improve DailyGoals Component
 
-### What's redundant
-The hero section in `src/pages/Index.tsx` (lines 158–176) contains a 3-column stats grid showing:
-- Words Learned: 243
-- Your Coins: 1,240
-- Day Streak: 12🔥
+### Issues to fix
 
-All three of these are already displayed in the Right Panel (`src/components/RightPanel.tsx`):
-- "Your Coins" section with animated gold display
-- "Daily Streak" with progress bar and streak saves
-- "Current Level" covers progression context
+**1. Empty progress bar is invisible**
+At 0% progress the bar renders at 0px width with no visual cue. Fix: give the track a more visible background (`bg-muted/60`) and add a subtle striped or dashed "empty" style.
 
-### The fix
-Remove the stats row `div` block (lines 158–177) from `src/pages/Index.tsx`. This will tighten up the hero section, removing visual clutter and making the countdown timer flow directly into the prizes section below.
+**2. Awkward layout hierarchy**
+The coins note floats between the progress bar and button, which is visually disconnected. Move the coins note to sit right below the task label (inline with the header row), and collapse it into a badge-style chip.
+
+**3. Button label is too generic**
+Both buttons say "Earn Coins" with no goal context. Improve to use goal-specific labels: "Start Review" and "Start Lesson".
+
+**4. No completed state**
+When `current >= total`, the goal should show a ✅ checkmark, green border, strikethrough label, and hide the CTA button (replaced by a "Completed!" badge).
+
+**5. Progress counter readability**
+Make the `0/10` counter slightly larger and use the primary color when in progress, gold when complete.
+
+### What will change
+
+**`src/components/DailyGoals.tsx`** — full redesign of the goal card layout:
+
+- Move coins note into the header row as a small pill badge (e.g. `🪙 +3 coins/answer`)
+- Thicken the progress bar from `h-1` to `h-2` and give the track a more visible background
+- Show a subtle min-width glow dot on the track to indicate position even at 0%
+- Add a completed state: green border, ✅ circle, "Completed!" badge, hide CTA
+- Change button labels to goal-specific: "Start Review" / "Start Lesson"
+- Make the `current/total` counter use `text-primary` when in-progress and `text-progress-green` when done
 
 ### Files to change
-- `src/pages/Index.tsx` — delete the stats grid block inside the hero section
+- `src/components/DailyGoals.tsx`
