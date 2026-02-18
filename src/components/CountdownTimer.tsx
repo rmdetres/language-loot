@@ -41,8 +41,11 @@ export const CountdownTimer = () => {
           <div
             className={`
               relative w-14 sm:w-16 h-14 sm:h-16 rounded-xl card-glass flex items-center justify-center
-              border border-primary/20 overflow-hidden
-              ${unit.label === "SEC" ? "border-primary/40" : ""}
+              border overflow-hidden
+              ${unit.label === "SEC"
+                ? "border-urgency-red/40 bg-urgency-red/5"
+                : "border-trust-blue/20"
+              }
             `}
           >
             {/* Shimmer effect */}
@@ -51,7 +54,11 @@ export const CountdownTimer = () => {
             <span
               key={`${unit.label}-${unit.value}`}
               className={`
-                font-display text-2xl sm:text-3xl text-gradient-gold relative z-10
+                font-display text-2xl sm:text-3xl relative z-10
+                ${unit.label === "SEC"
+                  ? "text-urgency-red"
+                  : "text-gradient-gold"
+                }
                 ${unit.label === "SEC" && tick ? "animate-countdown-tick" : ""}
               `}
             >

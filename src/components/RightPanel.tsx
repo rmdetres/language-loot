@@ -52,25 +52,26 @@ export const RightPanel = () => {
 
       {/* Daily Streak */}
       <div className="px-4 py-4 border-b border-border space-y-3">
+        {/* Green = habit/streak psychology */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-muted/50 border border-border flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-progress-green/15 border border-progress-green/30 flex items-center justify-center flex-shrink-0">
             <span className="text-lg">🔥</span>
           </div>
           <div>
             <p className="text-xs text-muted-foreground font-semibold">Daily Streak</p>
-            <p className="font-display text-2xl text-foreground">12 Days</p>
+            <p className="font-display text-2xl text-progress-green">12 Days</p>
           </div>
         </div>
 
-        {/* Words today progress */}
+        {/* Words today progress — green bar */}
         <div className="space-y-1.5">
           <div className="flex justify-between text-xs">
             <span className="text-muted-foreground">{wordsToday}/{wordsGoal} words today</span>
-            <span className="text-primary font-bold">{Math.round(progressPct)}%</span>
+            <span className="text-progress-green font-bold">{Math.round(progressPct)}%</span>
           </div>
           <div className="h-2 rounded-full bg-muted overflow-hidden">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-secondary to-primary transition-all duration-700 shimmer"
+              className="h-full rounded-full bg-gradient-green transition-all duration-700"
               style={{ width: `${progressPct}%` }}
             />
           </div>
@@ -78,7 +79,7 @@ export const RightPanel = () => {
 
         {/* Streak saves */}
         <div>
-          <p className="text-[10px] font-black uppercase tracking-[0.15em] text-primary mb-2">
+          <p className="text-[10px] font-black uppercase tracking-[0.15em] text-progress-green mb-2">
             Streak Saves
           </p>
           <div className="flex gap-2">
@@ -87,8 +88,8 @@ export const RightPanel = () => {
                 key={i}
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm border
                   ${i === 0
-                    ? "bg-secondary/20 border-secondary/40 text-secondary"
-                    : "bg-muted/30 border-border text-muted-foreground/40"
+                    ? "bg-progress-green/15 border-progress-green/40 text-progress-green"
+                    : "bg-muted/30 border-border text-muted-foreground/30"
                   }`}
               >
                 🛡️
@@ -98,7 +99,7 @@ export const RightPanel = () => {
         </div>
       </div>
 
-      {/* Coins */}
+      {/* Coins — Gold = dopamine reward */}
       <div className="px-4 py-4 border-b border-border">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 rounded-xl bg-gradient-gold flex items-center justify-center shadow-coin flex-shrink-0 animate-pulse-glow">
@@ -109,9 +110,9 @@ export const RightPanel = () => {
             <p className="font-display text-2xl text-gradient-gold text-glow-gold">1,240</p>
           </div>
         </div>
-        <div className="flex items-center gap-1.5 bg-secondary/10 border border-secondary/30 rounded-lg px-2.5 py-1.5">
+        <div className="flex items-center gap-1.5 bg-primary/10 border border-primary/25 rounded-lg px-2.5 py-1.5">
           <span className="text-sm">⚡</span>
-          <span className="text-xs font-black text-secondary">2x coin bonus active!</span>
+          <span className="text-xs font-black text-primary">2x coin bonus active!</span>
         </div>
       </div>
 

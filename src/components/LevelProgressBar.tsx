@@ -33,10 +33,10 @@ export const LevelProgressBar = ({
 
       {/* Progress track */}
       <div className="relative mt-4 mb-2">
-        {/* Track */}
+        {/* Track — GREEN for progress/habit psychology */}
         <div className="h-3 bg-muted rounded-full overflow-hidden">
           <div
-            className="h-full rounded-full bg-gradient-gold transition-all duration-1000 ease-out shimmer"
+            className="h-full rounded-full bg-gradient-green transition-all duration-1000 ease-out"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -55,11 +55,11 @@ export const LevelProgressBar = ({
                 <div
                   className={`w-2 h-2 rounded-full -mt-5 border-2
                     ${reached
-                      ? "bg-primary border-primary shadow-glow-gold"
+                      ? "bg-progress-green border-progress-green shadow-glow-green"
                       : "bg-muted border-muted-foreground/40"
                     }`}
                 />
-                <span className={`text-[10px] font-bold mt-1 ${reached ? "text-primary" : "text-muted-foreground"}`}>
+                <span className={`text-[10px] font-bold mt-1 ${reached ? "text-progress-green" : "text-muted-foreground"}`}>
                   {milestone.label}
                 </span>
               </div>

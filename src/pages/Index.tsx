@@ -158,13 +158,13 @@ const Index = () => {
               style={{ animationFillMode: "both", opacity: 0 }}
             >
               {[
-                { label: "Words Learned", value: "243", icon: "📖" },
-                { label: "Your Tickets", value: "12", icon: "🎟️" },
-                { label: "Day Streak", value: "12🔥", icon: "🔥" },
+                { label: "Words Learned", value: "243", icon: "📖", color: "text-trust-blue" },
+                { label: "Your Tickets", value: "12", icon: "🎟️", color: "text-gradient-gold" },
+                { label: "Day Streak", value: "12🔥", icon: "🔥", color: "text-progress-green" },
               ].map((stat) => (
                 <div key={stat.label} className="card-glass rounded-xl p-3 text-center">
                   <p className="text-base">{stat.icon}</p>
-                  <p className="font-display text-2xl text-gradient-gold mt-0.5">{stat.value}</p>
+                  <p className={`font-display text-2xl mt-0.5 ${stat.color}`}>{stat.value}</p>
                   <p className="text-muted-foreground text-[10px] font-semibold uppercase tracking-wider">
                     {stat.label}
                   </p>
@@ -184,7 +184,8 @@ const Index = () => {
                 <span className="text-lg">🎁</span>
                 <h2 className="font-display text-2xl text-gradient-gold">This Week's Prizes</h2>
               </div>
-              <div className="badge-hot text-[10px] px-2.5 py-1 rounded-full">🔴 LIVE</div>
+              {/* RED = urgency only */}
+              <div className="text-[10px] px-2.5 py-1 rounded-full font-black uppercase tracking-wider bg-urgency-red text-white flex items-center gap-1 shadow-glow-red">🔴 LIVE</div>
             </div>
 
             {/* Prize cards horizontal scroll */}
@@ -248,7 +249,8 @@ const Index = () => {
               streak={12}
             />
 
-            <button className="mt-3 w-full py-4 rounded-2xl bg-gradient-gold text-primary-foreground font-black text-base uppercase tracking-wider shadow-glow-gold hover:opacity-90 transition-opacity shimmer animate-pulse-glow">
+            {/* BLUE CTA — trust/action psychology */}
+            <button className="mt-3 w-full py-4 rounded-2xl bg-gradient-blue text-white font-black text-base uppercase tracking-wider shadow-glow-blue hover:opacity-90 transition-opacity">
               🚀 Start Full Study Session
             </button>
           </section>
@@ -294,25 +296,25 @@ const Index = () => {
                   step: "01",
                   icon: "📖",
                   title: "Study Words",
-                  desc: "Learn words in your target language. Each correct answer earns coins.",
-                  color: "border-accent/30 bg-accent/5",
-                  accent: "text-accent",
+                  desc: "Learn words in your target language. Each correct answer builds your habit streak.",
+                  color: "border-trust-blue/25 bg-trust-blue/5",   // BLUE = trust, clarity
+                  accent: "text-trust-blue",
                 },
                 {
                   step: "02",
                   icon: "🪙",
                   title: "Earn Coins",
-                  desc: "10 coins = 1 raffle ticket. Study more, get more tickets.",
-                  color: "border-primary/30 bg-primary/5",
+                  desc: "10 coins = 1 raffle ticket. Keep your streak alive to earn faster.",
+                  color: "border-primary/25 bg-primary/5",          // GOLD = reward, dopamine
                   accent: "text-primary",
                 },
                 {
                   step: "03",
                   icon: "🎟️",
                   title: "Win Prizes",
-                  desc: "Weekly drawings with real prizes. More tickets = better odds.",
-                  color: "border-secondary/30 bg-secondary/5",
-                  accent: "text-secondary",
+                  desc: "Weekly drawings with real prizes. More tickets = better odds to WIN.",
+                  color: "border-progress-green/25 bg-progress-green/5",  // GREEN = achievement
+                  accent: "text-progress-green",
                 },
               ].map((item, i) => (
                 <div
