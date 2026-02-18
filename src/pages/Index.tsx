@@ -202,12 +202,8 @@ const Index = () => {
               ))}
             </div>
 
-            <div className="mt-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 flex items-center gap-2.5">
-              <span className="text-base">🪙</span>
-              <p className="text-xs text-muted-foreground">
-                Earn <span className="text-primary font-bold">coins</span> by studying — more coins = better prize odds!
-              </p>
-            </div>
+
+
           </section>
 
 
