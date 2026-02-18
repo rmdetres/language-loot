@@ -36,7 +36,7 @@ export const DailyGoals = () => {
               }`}
             >
               {/* Header row */}
-              <div className="flex items-start justify-between px-4 py-3 gap-3">
+              <div className="flex items-start justify-between px-4 py-2.5 gap-3">
                 <div className="flex items-start gap-3 min-w-0">
                   {/* Check circle */}
                   {isDone ? (
@@ -49,7 +49,7 @@ export const DailyGoals = () => {
                       {goal.label}
                     </span>
                     {/* Coins note as pill badge */}
-                    <span className="inline-flex items-center gap-1 mt-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                    <span className="inline-flex items-center gap-1 mt-0.5 px-1.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
                       🪙 {goal.coinsNote}
                     </span>
                   </div>
@@ -79,15 +79,15 @@ export const DailyGoals = () => {
               </div>
 
               {/* CTA or Completed badge */}
-              <div className="px-4 py-3">
+              <div className="px-4 py-2">
                 {isDone ? (
-                  <div className="w-full py-2 rounded-xl bg-progress-green/10 border border-progress-green/30 flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-progress-green" />
-                    <span className="text-progress-green font-black text-sm uppercase tracking-wider">Completed!</span>
+                  <div className="w-full py-1.5 rounded-xl bg-progress-green/10 border border-progress-green/30 flex items-center justify-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-progress-green" />
+                    <span className="text-progress-green font-black text-xs uppercase tracking-wider">Completed!</span>
                   </div>
                 ) : (
-                  <button className="w-full py-2.5 rounded-xl bg-gradient-gold text-primary-foreground font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-coin">
-                    <Coins className="w-4 h-4" />
+                  <button className="w-full py-1.5 rounded-xl bg-gradient-gold text-primary-foreground font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-coin">
+                    <Coins className="w-3.5 h-3.5" />
                     {goal.ctaLabel}
                   </button>
                 )}
