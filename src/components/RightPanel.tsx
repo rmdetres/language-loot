@@ -6,6 +6,7 @@ interface LeagueRow {
   active?: boolean;
 }
 
+
 const LEAGUE_ROWS: LeagueRow[] = [
   { tier: "Lucky Draw", coins: "106 coins", color: "text-trust-blue", icon: "🎯", active: true },
   { tier: "Bronze", coins: "356 coins", color: "text-prize-bronze", icon: "🥉" },
@@ -28,10 +29,100 @@ const CULTURE_CATEGORIES = [
 ];
 
 export const RightPanel = () => {
+  const wordsToday = 0;
+  const wordsGoal = 10;
+  const progressPct = (wordsToday / wordsGoal) * 100;
+
   return (
     <aside className="flex flex-col h-full bg-card border-l border-border overflow-y-auto">
 
-      {/* League table */}
+      {/* Subscription badge */}
+      <div className="px-4 py-5 border-b border-border">
+        <p className="text-[10px] font-black uppercase tracking-[0.15em] text-muted-foreground mb-3">
+          Subscription
+        </p>
+        <div className="flex items-center gap-3">
+          <div className="w-11 h-11 rounded-xl bg-gradient-gold flex items-center justify-center shadow-coin flex-shrink-0">
+            <span className="text-xl">🍀</span>
+          </div>
+          <div>
+            <p className="font-display text-lg text-gradient-gold leading-tight">The Country Club</p>
+            <p className="text-xs text-muted-foreground">Premium tier active</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Current Level */}
+      <div className="px-4 py-4 border-b border-border">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-muted/50 border border-border flex items-center justify-center flex-shrink-0">
+            <span className="text-lg">🎓</span>
+          </div>
+          <div>
+            <p className="text-xs text-muted-foreground font-semibold">Current Level</p>
+            <p className="font-display text-2xl text-foreground">A1</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Daily Streak */}
+      <div className="px-4 py-4 border-b border-border space-y-3">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-progress-green/15 border border-progress-green/30 flex items-center justify-center flex-shrink-0">
+            <span className="text-lg">🔥</span>
+          </div>
+          <div>
+            <p className="text-xs text-muted-foreground font-semibold">Daily Streak</p>
+            <p className="font-display text-2xl text-progress-green">0 Days</p>
+          </div>
+        </div>
+        <div className="space-y-1.5">
+          <div className="flex justify-between text-xs">
+            <span className="text-muted-foreground">{wordsToday}/{wordsGoal} words today</span>
+            <span className="text-progress-green font-bold">{Math.round(progressPct)}%</span>
+          </div>
+          <div className="h-2 rounded-full bg-muted overflow-hidden">
+            <div
+              className="h-full rounded-full bg-gradient-green transition-all duration-700"
+              style={{ width: `${progressPct}%` }}
+            />
+          </div>
+        </div>
+        <div>
+          <p className="text-[10px] font-black uppercase tracking-[0.15em] text-progress-green mb-2">
+            Streak Saves
+          </p>
+          <div className="flex gap-2">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className="w-8 h-8 rounded-full flex items-center justify-center text-sm border bg-muted/30 border-border text-muted-foreground/30"
+              >
+                🛡️
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Coins */}
+      <div className="px-4 py-4 border-b border-border">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-10 h-10 rounded-xl bg-gradient-gold flex items-center justify-center shadow-coin flex-shrink-0 animate-pulse-glow">
+            <span className="text-lg">🪙</span>
+          </div>
+          <div>
+            <p className="text-xs text-muted-foreground font-semibold">Your Coins</p>
+            <div className="flex items-baseline gap-2">
+              <p className="font-display text-2xl text-gradient-gold text-glow-gold">44</p>
+              <p className="text-xs text-muted-foreground">This Week</p>
+            </div>
+            <p className="text-xs text-primary font-bold">2x coin bonus</p>
+          </div>
+        </div>
+      </div>
+
+
       <div className="px-4 py-4 border-b border-border">
         <div className="grid grid-cols-3 text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground mb-2 px-1">
           <span>League</span>
