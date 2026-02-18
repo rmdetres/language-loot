@@ -73,9 +73,19 @@ export default {
           diamond: "hsl(var(--prize-diamond))",
         },
         neon: {
-          cyan: "hsl(var(--neon-cyan))",
           green: "hsl(var(--neon-green))",
           orange: "hsl(var(--hot-orange))",
+        },
+        trust: {
+          blue: "hsl(var(--trust-blue))",
+          soft: "hsl(var(--trust-blue-soft))",
+        },
+        progress: {
+          green: "hsl(var(--progress-green))",
+        },
+        urgency: {
+          red: "hsl(var(--urgency-red))",
+          soft: "hsl(var(--urgency-red-soft))",
         },
       },
       borderRadius: {
@@ -88,18 +98,24 @@ export default {
       },
       backgroundImage: {
         "gradient-gold": "var(--gradient-gold)",
+        "gradient-green": "var(--gradient-green)",
+        "gradient-blue": "var(--gradient-blue)",
         "gradient-card": "var(--gradient-card)",
         "gradient-prize": "var(--gradient-prize)",
         "gradient-orange": "var(--gradient-orange)",
+        "gradient-red": "var(--gradient-red)",
         "gradient-cyan": "var(--gradient-cyan)",
         "gradient-hero": "var(--gradient-hero)",
       },
       boxShadow: {
         "glow-gold": "var(--glow-gold)",
+        "glow-green": "var(--glow-green)",
         "glow-orange": "var(--glow-orange)",
+        "glow-blue": "var(--glow-blue)",
+        "glow-red": "var(--glow-red)",
         "glow-cyan": "var(--glow-cyan)",
         "glow-card": "var(--glow-card)",
-        "coin": "0 2px 10px hsl(38 85% 42% / 0.35), inset 0 1px 0 hsl(43 100% 80% / 0.4), 0 0 0 1px hsl(38 85% 42% / 0.15)",
+        "coin": "0 2px 10px hsl(38 88% 44% / 0.35), inset 0 1px 0 hsl(43 100% 78% / 0.4), 0 0 0 1px hsl(38 88% 44% / 0.15)",
       },
       keyframes: {
         "accordion-down": {

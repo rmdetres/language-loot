@@ -54,13 +54,13 @@ export const WordStudyCard = ({
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Streak */}
-            <div className="flex items-center gap-1 bg-secondary/10 border border-secondary/20 px-2.5 py-1 rounded-full">
+            {/* GREEN streak badge — habit psychology */}
+            <div className="flex items-center gap-1 bg-progress-green/10 border border-progress-green/25 px-2.5 py-1 rounded-full">
               <span className="text-sm">🔥</span>
-              <span className="text-xs font-black text-secondary">{streak} streak</span>
+              <span className="text-xs font-black text-progress-green">{streak} streak</span>
             </div>
-            {/* Coin reward */}
-            <div className="flex items-center gap-1 bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-full animate-pulse-glow">
+            {/* GOLD coin reward — dopamine */}
+            <div className="flex items-center gap-1 bg-primary/10 border border-primary/25 px-2.5 py-1 rounded-full animate-pulse-glow">
               <span className="text-xs">🪙</span>
               <span className="text-xs font-black text-primary">+{coinsPerWord}</span>
             </div>
