@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { LayoutDashboard, BookOpen, Bookmark, ChevronDown, Globe, Languages } from "lucide-react";
+import { LayoutDashboard, BookOpen, Bookmark, ChevronDown, Globe, Languages, User, Library, Gift, LogOut, BarChart2 } from "lucide-react";
 
 const NAV_ITEMS = [
-  { icon: LayoutDashboard, label: "Dashboard", active: true },
-  { icon: BookOpen, label: "Collections", active: false },
-  { icon: Bookmark, label: "My Words", active: false },
+  { icon: LayoutDashboard, label: "Dashboard" },
+  { icon: BookOpen, label: "Collections" },
+  { icon: Bookmark, label: "My Words" },
+  { icon: User, label: "Profile" },
+  { icon: Library, label: "Saved Library" },
+  { icon: Gift, label: "Rewards" },
 ];
 
 const LANGUAGES = [
@@ -119,7 +122,7 @@ export const LeftSidebar = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-3 py-4 space-y-1">
+      <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
         {NAV_ITEMS.map(({ icon: Icon, label }) => (
           <button
             key={label}
@@ -138,8 +141,8 @@ export const LeftSidebar = () => {
         ))}
       </nav>
 
-      {/* User profile */}
-      <div className="px-4 py-4 border-t border-border">
+      {/* User profile + Log out */}
+      <div className="px-4 py-4 border-t border-border space-y-3">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-full bg-gradient-gold flex items-center justify-center text-primary-foreground font-black text-sm shadow-coin flex-shrink-0">
             R
@@ -149,6 +152,10 @@ export const LeftSidebar = () => {
             <p className="text-xs text-muted-foreground truncate">rmdetres@gmail.com</p>
           </div>
         </div>
+        <button className="flex items-center gap-2 text-xs font-bold text-urgency-red hover:opacity-80 transition-opacity px-1">
+          <LogOut className="w-3.5 h-3.5" />
+          Log out
+        </button>
       </div>
     </aside>
   );

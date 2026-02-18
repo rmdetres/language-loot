@@ -8,6 +8,9 @@ import { LevelProgressBar } from "@/components/LevelProgressBar";
 import { Leaderboard } from "@/components/Leaderboard";
 import { LeftSidebar } from "@/components/LeftSidebar";
 import { RightPanel } from "@/components/RightPanel";
+import { CharacterCards } from "@/components/CharacterCards";
+import { WordStats } from "@/components/WordStats";
+import { DailyGoals } from "@/components/DailyGoals";
 
 const PRIZES = [
   {
@@ -274,6 +277,26 @@ const Index = () => {
               </span>
             </button>
           </section>
+
+          {/* ===== CHARACTERS ===== */}
+          <section>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">🎭</span>
+              <h2 className="font-display text-2xl text-gradient-gold">Your Characters</h2>
+            </div>
+            <CharacterCards />
+          </section>
+
+          {/* ===== WORD STATS ===== */}
+          <section>
+            <WordStats mastered={1} learning={10} newWords={0} dueForReview={0} />
+          </section>
+
+          {/* ===== DAILY GOALS ===== */}
+          <section>
+            <DailyGoals />
+          </section>
+
 
           {/* ===== LEADERBOARD ===== */}
           <section>
